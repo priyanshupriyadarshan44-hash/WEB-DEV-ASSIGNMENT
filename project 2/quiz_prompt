@@ -1,0 +1,110 @@
+// -----------------------------------------------------
+// MULTI-LEVEL JAVASCRIPT QUIZ GAME WITH RESTART OPTION
+// Levels: Easy, Medium, Hard
+// -----------------------------------------------------
+
+// LEVEL 1: EASY QUESTIONS
+const level1 = [
+    { question: "What is the capital of India?", answer: "new delhi" },
+    { question: "5 + 5 = ?", answer: "10" },
+    { question: "Which animal is known as the King of the Jungle?", answer: "lion" },
+    { question: "Which planet is called the Red Planet?", answer: "mars" },
+    { question: "How many days are there in a week?", answer: "7" }
+];
+
+// LEVEL 2: MEDIUM QUESTIONS
+const level2 = [
+    { question: "Who invented the computer?", answer: "charles babbage" },
+    { question: "HTML stands for?", answer: "hypertext markup language" },
+    { question: "What is the largest mammal?", answer: "blue whale" },
+    { question: "Which gas do plants absorb?", answer: "carbon dioxide" },
+    { question: "What is the square root of 81?", answer: "9" }
+];
+
+// LEVEL 3: HARD QUESTIONS
+const level3 = [
+    { question: "Who wrote 'The Theory of Relativity'?", answer: "albert einstein" },
+    { question: "Which programming language is used for styling webpages?", answer: "css" },
+    { question: "What is the boiling point of water in Celsius?", answer: "100" },
+    { question: "Which planet has the most moons?", answer: "jupiter" },
+    { question: "The process of cell division is called?", answer: "mitosis" }
+];
+
+// FUNCTION TO PLAY ONE LEVEL
+function playLevel(levelArray, levelName) {
+
+    let score = 0;
+    alert("Starting " + levelName + " Level!");
+
+    for (let i = 0; i < levelArray.length; i++) {
+        let userAnswer = prompt(levelArray[i].question);
+
+        if (userAnswer === null) {
+            alert("Quiz cancelled.");
+            return -1; 
+        }
+
+        userAnswer = userAnswer.toLowerCase().trim();
+
+        if (userAnswer === levelArray[i].answer) {
+            score++;
+            alert("Correct! ✔️");
+        } else {
+            alert("Wrong ❌\nCorrect Answer: " + levelArray[i].answer);
+        }
+    }
+
+    alert(
+        levelName +
+        " Level Completed!\nYour Score: " +
+        score +
+        " / " +
+        levelArray.length
+    );
+
+    return score;
+}
+
+// MASTER FUNCTION TO RUN FULL QUIZ + RESTART OPTION
+function runFullQuiz() {
+
+    alert("WELCOME TO THE MULTI-LEVEL QUIZ GAME! 🎮");
+
+    let totalScore = 0;
+
+    // Level 1
+    let score1 = playLevel(level1, "EASY");
+    if (score1 === -1) return;
+    totalScore += score1;
+
+    // Level 2
+    let score2 = playLevel(level2, "MEDIUM");
+    if (score2 === -1) return;
+    totalScore += score2;
+
+    // Level 3
+    let score3 = playLevel(level3, "HARD");
+    if (score3 === -1) return;
+    totalScore += score3;
+
+    // Final result
+    alert(
+        "QUIZ COMPLETED! 🎉\n" +
+        "Your Total Score: " + totalScore + " / " +
+        (level1.length + level2.length + level3.length)
+    );
+
+    // -----------------------------
+    //   RESTART QUIZ OPTION
+    // -----------------------------
+    let again = prompt("Do you want to play again? (yes/no)").toLowerCase().trim();
+
+    if (again === "yes") {
+        runFullQuiz(); // restart
+    } else {
+        alert("Thank you for playing! 👋");
+    }
+}
+
+// START QUIZ
+runFullQuiz();

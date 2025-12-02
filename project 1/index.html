@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div  class="logo">MyPortfolio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="top" class="hero">
+    <div class="hero-text">
+      <h1 class="color-animate">Hi, I'm a Full Stack Developer</h1>
+      <p>I build modern, responsive, and user-friendly websites.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="images/PHOTO.jpg" alt="Profile photo">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am a passionate developer who loves building clean and professional websites using modern web technologies.</p>
+  </section>
+
+  <!-- SKILLS GRID -->
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+
+    <div class="skills-grid">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+      <div class="card">Python</div>
+      <div class="card">Node.js</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+
+    <div class="projects-grid">
+      <div class="card">
+        <h3>Portfolio Project</h3>
+        <p>A simple portfolio using HTML and CSS.</p>
+      </div>
+
+      <div class="card">
+        <h3>Interactive Protfolio</h3>
+        <p>A little advanced project of portfolio using HTML and CSS.</p>
+      </div>
+
+      <div class="card">
+        <h3>Gradebook Analayzer</h3>
+        <p>A simple python program for analyzing grades and making lists of students according grades.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+  <!-- BACK TO TOP BUTTON -->
+    <button  href="#top" id="backToTop">↑</button>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 My Portfolio | All rights reserved
+  </footer>
+
+</body>
+</html>
